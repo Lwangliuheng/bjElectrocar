@@ -4,6 +4,7 @@
     height:100vh;
     background-color: #f8f8f8;
     padding-top:3vh;
+    overflow: scroll;
   }
   .list_one{
     background-color: #fff;

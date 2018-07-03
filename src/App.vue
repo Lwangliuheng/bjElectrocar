@@ -51,9 +51,9 @@ export default {
     	margin-right: 0px;
     	margin-left: 0px; 
     }
-	.tsk{
-	    width:80% !important;
-	  }
+    .tsk{
+            width:80% !important;
+          }
     #app{
    	  font-size:12px;
 			height: 100%;

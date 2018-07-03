@@ -24,12 +24,15 @@
     max-width:900px;
     background-color: #fff;
     margin:0 auto;
-    height:400px;
+    height:500px;
+    overflow: hidden;
   }
   .one_wrap{
     position:relative;
     width:600px;
-    margin:0px auto 10px ;
+    margin-left:160px;
+    margin-bottom:10px;
+    /*margin:0px auto 10px ;*/
   }
   .oneList{
     margin-right:20px;
@@ -68,12 +71,15 @@
       width:300px;
       margin-left:350px;
       margin-top:30px;
+      /*margin:30px auto 0px ;*/
      }
      .footer{
+       width:480px;
        color:#ed0303;
        font-size: 14px;
        margin-left:261px;
        margin-top:30px;
+       /*text-align:center;*/
      }
      .word{
       display: inline-block;
@@ -82,8 +88,9 @@
      }
      .table_wrap{
       width:700px;
-      margin:0 auto;
-      padding-top:40px;
+      max-height: 340px;
+      overflow: scroll;
+      margin:40px auto 0px;
      }
   .table th{
     color: #2EAB3B;
@@ -152,41 +159,41 @@
          
         <table class="table" border="0" cellspacing="0" cellpadding="0" style="border-top: 1px solid #bbb;">
                 <thead>
-                <tr>
-                  <th style="width:18%;">
-                    序号
-                  </th>
-                  <th  style="width:18%;">
-                    生成时间
-                  </th>
-                  <th  style="width:18%;margin:0px 6px;">
-                    文书编号
-                  </th>
-                  <th  style="width:18%;">
-                    身份证号
-                  </th>
-                  <th  style="width:18%;">
-                    状态
-                  </th>
-                  <th  style="width:18%;">
-                    操作
-                  </th>
-                </tr>
+                  <tr>
+                    <th style="width:18%; border-left:1px solid #bbb;">
+                      序号
+                    </th>
+                    <th  style="width:18%;">
+                      生成时间
+                    </th>
+                    <th  style="width:18%;margin:0px 6px;">
+                      文书编号
+                    </th>
+                    <th  style="width:18%;margin:0px 6px;">
+                      身份证号
+                    </th>
+                    <th  style="width:18%;">
+                      状态
+                    </th>
+                    <th  style="width:18%;">
+                      操作
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(item,index) in listData">
-                  <td>{{index+1}}</td>
-                  <td>{{fmtDate(item.createTime)}}</td>
-                  <td style="padding:0px 10px;">{{item.num}}</td>
-                  <td style="padding:0px 10px;">{{item.licenseNo}}</td>
-                  <td>
-                    <span class="blue" v-if="item.type">有效</span>
-                    <span class="red" v-if="!item.type">作废</span>
-                  </td>
-                  <td>
-                    <span class="xzBut" @click="goUrl($event,item.url)">下载</span>
-                  </td>
-                </tr>
+                    <tr v-for="(item,index) in listData">
+                      <td>{{index+1}}</td>
+                      <td>{{fmtDate(item.createTime)}}</td>
+                      <td style="padding:0px 10px;">{{item.num}}</td>
+                      <td style="padding:0px 10px;">{{item.licenseNo}}</td>
+                      <td>
+                        <span class="blue" v-if="item.type">有效</span>
+                        <span class="red" v-if="!item.type">作废</span>
+                      </td>
+                      <td>
+                        <span class="xzBut" @click="goUrl($event,item.url)">下载</span>
+                      </td>
+                    </tr>
                 </tbody>
         </table>
           </div>
@@ -381,7 +388,7 @@ export default {
                 this.$confirm(response.data.resdes, '温馨提示', {
                              confirmButtonText: '确定',
                              showCancelButton:false,
-                             customClass:"tsk",
+                             customClass:"tska",
                              type: 'warning',
                              showClose:false,
                              center: true
