@@ -5,6 +5,7 @@ import home from  '@/page/home'
 import duty from  '@/page/duty'
 import dutyDetail from  '@/page/dutyDetail'
 import dutyList from  '@/page/dutyList'
+import pdf from  '@/page/pdf'
 
 Vue.use(Router);
 export default new Router({
@@ -13,7 +14,7 @@ export default new Router({
     
     {
       path: '/',
-      component: home
+      component: duty
     },
     {
       path: '/detail',
@@ -22,6 +23,10 @@ export default new Router({
     {
       path: '/list',
       component: dutyList
+    },
+    {
+      path: '/pdf',
+      component: pdf
     },
     {
       path: '/duty',
